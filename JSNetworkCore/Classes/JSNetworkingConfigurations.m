@@ -82,8 +82,8 @@
     Class class = NSClassFromString(ClassName);
     if(class){
         id obj = [[class alloc]init];
-        if ([obj conformsToProtocol:@protocol(HTJSNetworkingConfigurationDelegate)]) {
-            self.delegate = (id <HTJSNetworkingConfigurationDelegate>)obj;
+        if ([obj conformsToProtocol:@protocol(JSNetworkingConfigurationDelegate)]) {
+            self.delegate = (id <JSNetworkingConfigurationDelegate>)obj;
         } else {
             NSException *exception = [[NSException alloc] initWithName:@"JSNetworkingBaseManager提示" reason:[NSString stringWithFormat:@"%@没有遵循JSNetworkingConfigurationDelegate协议",obj] userInfo:nil];
             @throw exception;

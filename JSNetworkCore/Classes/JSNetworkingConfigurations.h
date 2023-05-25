@@ -18,7 +18,7 @@ typedef enum : NSUInteger {
  *  网络请求返回参数验证代理
  *********************************************************************/
 /*! 网络请求返回参数验证代理函数 */
-@protocol HTJSNetworkingConfigurationDelegate <NSObject>
+@protocol JSNetworkingConfigurationDelegate <NSObject>
 @required
 /*!
  @brief 验证返回的参数是否符合具体项目的一个正确response
@@ -61,7 +61,7 @@ typedef enum : NSUInteger {
 /*! 全局api的host地址 */
 @property (nonatomic, strong, readonly) NSString* baseUrl;
 /*! 外挂的全局response验证和token获取代理，如果有注册则调用代理方法，如果没有则默认访问成功，不对response做验证 */
-@property (nonatomic, strong) id<HTJSNetworkingConfigurationDelegate> delegate;
+@property (nonatomic, strong) id<JSNetworkingConfigurationDelegate> delegate;
 /*! 全局的httpheader设置，就以当前里面的Kev-Value对Header做追加*/
 @property(copy,nonatomic) NSDictionary* httpHeaders;
 /*!<#Description#>*/

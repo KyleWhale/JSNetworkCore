@@ -15,7 +15,7 @@ static NSString * const JSNetworkingRequestID = @"JSNetworkingRequestID";
  *  网络请求成功回调代理
  *********************************************************************/
 /*! 网络请求代理回调，必须实现 */
-@protocol HTJSNetworkingCallBackDelegate<NSObject>
+@protocol JSNetworkingCallBackDelegate<NSObject>
 @required
 /*!
  @brief 网络请求成功回调代理函数
@@ -34,7 +34,7 @@ static NSString * const JSNetworkingRequestID = @"JSNetworkingRequestID";
  *  网络请求参数代理
  *********************************************************************/
 /*! 网络请求request 参数代理函数*/
-@protocol HTJSNetworkingRequestParamsDelegate <NSObject>
+@protocol JSNetworkingRequestParamsDelegate <NSObject>
 @required
 /*! 网络请求的参数代理，必须实现对应API的request参数,如果是普通的请求，返回NSDictionary,如果是上传图片请返回NSData */
 -(id)requestParamsDelegate:(JSNetworkingBaseManager*)manager;
@@ -44,7 +44,7 @@ static NSString * const JSNetworkingRequestID = @"JSNetworkingRequestID";
  *  网络请求request参数验证代理
  *********************************************************************/
 /*! 网络请求参数验证代理函数 */
-@protocol HTJSNetworkingRequestParamsValidatorDelegate <NSObject>
+@protocol JSNetworkingRequestParamsValidatorDelegate <NSObject>
 @required
 -(BOOL)manager:(JSNetworkingBaseManager*)manager isCorrectWithParams:(NSDictionary*)params;
 @end
@@ -52,7 +52,7 @@ static NSString * const JSNetworkingRequestID = @"JSNetworkingRequestID";
 /*********************************************************************
  *  网络请求前后拦截器
  *********************************************************************/
-@protocol HTJSNetworkingManagerInterceptor <NSObject>
+@protocol JSNetworkingManagerInterceptor <NSObject>
 @optional
 - (BOOL)manager:(JSNetworkingBaseManager *)manager beforePerformSuccessWithResponse:(JSResponse *)response;
 - (void)manager:(JSNetworkingBaseManager *)manager afterPerformSuccessWithResponse:(JSResponse *)response;
@@ -93,7 +93,7 @@ typedef NS_ENUM(NSUInteger, JSNetworkingStatusType)
 /*********************************************************************
  *  网络请求api具体定义
  *********************************************************************/
-@protocol HTJSAPIDetailDelegate <NSObject>
+@protocol JSApiDetailDelegate <NSObject>
 @required
 - (NSString *)methodName;
 - (JSNetworkingRequestType)requestType;
@@ -108,15 +108,15 @@ typedef NS_ENUM(NSUInteger, JSNetworkingStatusType)
 
 @interface JSNetworkingBaseManager : NSObject
 /*! 网络请求回调代理 */
-@property (strong, nonatomic) id<HTJSNetworkingCallBackDelegate> callBackDelegate;
+@property (strong, nonatomic) id<JSNetworkingCallBackDelegate> callBackDelegate;
 /*! 网络请求request参数代理 */
-@property (weak,nonatomic) id<HTJSNetworkingRequestParamsDelegate> paramSource;
+@property (weak,nonatomic) id<JSNetworkingRequestParamsDelegate> paramSource;
 /*! 网络请求request参数验证代理 */
-@property (weak,nonatomic) id<HTJSNetworkingRequestParamsValidatorDelegate> paramValidator;
+@property (weak,nonatomic) id<JSNetworkingRequestParamsValidatorDelegate> paramValidator;
 /*! 网络请求拦截器 */
-@property (weak,nonatomic) id<HTJSNetworkingManagerInterceptor> interceptor;
+@property (weak,nonatomic) id<JSNetworkingManagerInterceptor> interceptor;
 /*! 网络请求api具体信息代理 */
-@property (weak,nonatomic) NSObject<HTJSAPIDetailDelegate> *apiDetail;
+@property (weak,nonatomic) NSObject<JSApiDetailDelegate> *apiDetail;
 /*!
  网络请求具体状态，详情查看JSNetworkingStatusType定义
  */
@@ -144,7 +144,7 @@ typedef NS_ENUM(NSUInteger, JSNetworkingStatusType)
 /*!
  是否是外部请求，外部请求将不会拼接域名
  */
-@property(assign,nonatomic) BOOL isOutSideApi;
+@property(assign,nonatomic) BOOL custom;
 /*!
  @brief 网络请求发起函数
  @return 返回当前请求api的taskid

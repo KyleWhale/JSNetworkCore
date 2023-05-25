@@ -44,10 +44,10 @@
         _paramSource = nil;
         _paramValidator = nil;
         _networkStatus = JSNetworkingStatusTypeDefault;
-        if ([self conformsToProtocol:@protocol(HTJSAPIDetailDelegate)]) {
-            self.apiDetail = (id <HTJSAPIDetailDelegate>)self;
+        if ([self conformsToProtocol:@protocol(JSApiDetailDelegate)]) {
+            self.apiDetail = (id <JSApiDetailDelegate>)self;
         } else {
-            self.apiDetail = (id <HTJSAPIDetailDelegate>)self;
+            self.apiDetail = (id <JSApiDetailDelegate>)self;
             NSException *exception = [[NSException alloc] initWithName:@"JSNetworkingBaseManager提示" reason:[NSString stringWithFormat:@"%@没有遵循JSAPIDetailDelegate协议",self.apiDetail] userInfo:nil];
             @throw exception;
         }
@@ -136,7 +136,7 @@
 -(NSInteger)get:(NSDictionary*)params
 {
     __weak typeof(self) weakSelf = self;
-    if(self.isOutSideApi){
+    if(self.custom){
         JSRequest* request = [JSRequest sharedInstance];
         NSURLRequest* urlRequest = [request.httpRequestSerializer requestWithMethod:@"GET" URLString:self.apiDetail.methodName parameters:params error:nil];
         NSNumber* requestID = [[JSAPIProxy sharedInstance] callApiWithRequest:urlRequest success:^(JSResponse *response) {
@@ -162,7 +162,7 @@
 -(NSInteger)post:(NSDictionary*)params
 {
     __weak typeof(self) weakSelf = self;
-    if(self.isOutSideApi){
+    if(self.custom){
         JSRequest* request = [JSRequest sharedInstance];
         NSURLRequest* urlRequest = [request.httpRequestSerializer requestWithMethod:@"POST" URLString:self.apiDetail.methodName parameters:params error:nil];
         NSNumber* requestID = [[JSAPIProxy sharedInstance] callApiWithRequest:urlRequest success:^(JSResponse *response) {
