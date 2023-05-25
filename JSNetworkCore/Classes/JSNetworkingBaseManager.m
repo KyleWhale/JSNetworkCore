@@ -67,7 +67,7 @@
 {
     NSInteger requestId = 0;
     if ([self shouldCallAPIWithParams:apiParams]) {
-        if ([self.paramValidator manager:self isCorrectWithParams:apiParams]) {
+        if ([self.paramValidator manager:self parameter:apiParams]) {
             // 先检查一下是否有缓存
             if ([self.apiDetail shouldCache] && [self hasCacheWithParams:apiParams]) {
                 if(!self.isSpecialCache){
@@ -381,7 +381,7 @@
     }
     [self removeRequestIdWithRequestID:response.requestId];
     //如果外挂的reponseValidator是空，那么默认不对response验证，认为成功 ，否则验证responseValidator代理方法
-    if([JSNetworkingConfigurations sharedInstance].delegate == nil || [[JSNetworkingConfigurations sharedInstance].delegate manager:self isCorrectWithResponse:response.content]){
+    if([JSNetworkingConfigurations sharedInstance].delegate == nil || [[JSNetworkingConfigurations sharedInstance].delegate manager:self responseObject:response.content]){
         if([self.apiDetail shouldCache] && !response.isCache){
             if(self.isSpecialCache && [[response.content objectForKey:@"data"] count]>0){
                 [self.cache saveCacheWithData:response.responseData methodName:self.apiDetail.methodName requestParams:response.requestParams];

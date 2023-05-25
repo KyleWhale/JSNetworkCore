@@ -29,7 +29,7 @@ typedef enum : NSUInteger {
  @param params  api返回参数
  @return 是否符合预期的返回
  */
--(BOOL)manager:(JSNetworkingBaseManager*)manager isCorrectWithResponse:(NSDictionary*)params;
+-(BOOL)manager:(JSNetworkingBaseManager*)manager responseObject:(NSDictionary*)params;
 -(void)networkError:(JSNetworkingBaseManager*)manager;
 /*!
  @brief 获取用于发送API的token

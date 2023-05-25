@@ -46,7 +46,7 @@ static NSString * const JSNetworkingRequestID = @"JSNetworkingRequestID";
 /*! 网络请求参数验证代理函数 */
 @protocol JSNetworkingRequestParamsValidatorDelegate <NSObject>
 @required
--(BOOL)manager:(JSNetworkingBaseManager*)manager isCorrectWithParams:(NSDictionary*)params;
+-(BOOL)manager:(JSNetworkingBaseManager*)manager parameter:(NSDictionary*)params;
 @end
 
 /*********************************************************************
