@@ -9,7 +9,7 @@ target 'JSNetworkCore' do
   pod 'YYCache'
   pod 'AFNetworking'
   pod 'SVProgressHUD'
-  pod 'JKCategories'
+  pod 'JKCategories/Foundation'
   pod 'YYModel'
 
   # Pods for JSNetworkCore

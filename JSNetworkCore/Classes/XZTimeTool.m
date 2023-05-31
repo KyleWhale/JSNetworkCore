@@ -7,7 +7,7 @@
 //
 
 #import "XZTimeTool.h"
-#import "JKCategories.h"
+#import "JKFoundation.h"
 
 @interface XZTimeTool ()
 

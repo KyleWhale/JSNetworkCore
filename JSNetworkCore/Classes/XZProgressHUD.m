@@ -8,7 +8,6 @@
 
 #import "XZProgressHUD.h"
 #import "SVProgressHUD.h"
-#import "JKCategories.h"
 #import "SVProgressHUD+JS.h"
 
 @implementation XZProgressHUD

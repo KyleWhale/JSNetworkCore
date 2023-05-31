@@ -14,25 +14,6 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - JKCategories (1.9.3):
-    - JKCategories/CoreData (= 1.9.3)
-    - JKCategories/CoreLocation (= 1.9.3)
-    - JKCategories/Foundation (= 1.9.3)
-    - JKCategories/MapKit (= 1.9.3)
-    - JKCategories/QuartzCore (= 1.9.3)
-    - JKCategories/UIKit (= 1.9.3)
-  - JKCategories/CoreData (1.9.3):
-    - JKCategories/CoreData/NSFetchRequest (= 1.9.3)
-    - JKCategories/CoreData/NSManagedObject (= 1.9.3)
-    - JKCategories/CoreData/NSManagedObjectContext (= 1.9.3)
-  - JKCategories/CoreData/NSFetchRequest (1.9.3)
-  - JKCategories/CoreData/NSManagedObject (1.9.3):
-    - JKCategories/CoreData/NSManagedObjectContext
-  - JKCategories/CoreData/NSManagedObjectContext (1.9.3):
-    - JKCategories/CoreData/NSFetchRequest
-  - JKCategories/CoreLocation (1.9.3):
-    - JKCategories/CoreLocation/CLLocation (= 1.9.3)
-  - JKCategories/CoreLocation/CLLocation (1.9.3)
   - JKCategories/Foundation (1.9.3):
     - JKCategories/Foundation/NSArray (= 1.9.3)
     - JKCategories/Foundation/NSBundle (= 1.9.3)
@@ -83,90 +64,22 @@ PODS:
   - JKCategories/Foundation/NSURLRequest (1.9.3)
   - JKCategories/Foundation/NSURLSession (1.9.3)
   - JKCategories/Foundation/NSUserDefaults (1.9.3)
-  - JKCategories/MapKit (1.9.3):
-    - JKCategories/MapKit/MKMapView (= 1.9.3)
-  - JKCategories/MapKit/MKMapView (1.9.3)
-  - JKCategories/QuartzCore (1.9.3):
-    - JKCategories/QuartzCore/CAAnimation (= 1.9.3)
-    - JKCategories/QuartzCore/CALayer (= 1.9.3)
-    - JKCategories/QuartzCore/CAMediaTimingFunction (= 1.9.3)
-    - JKCategories/QuartzCore/CAShapeLayer (= 1.9.3)
-    - JKCategories/QuartzCore/CATransaction (= 1.9.3)
-  - JKCategories/QuartzCore/CAAnimation (1.9.3)
-  - JKCategories/QuartzCore/CALayer (1.9.3)
-  - JKCategories/QuartzCore/CAMediaTimingFunction (1.9.3)
-  - JKCategories/QuartzCore/CAShapeLayer (1.9.3)
-  - JKCategories/QuartzCore/CATransaction (1.9.3)
-  - JKCategories/UIKit (1.9.3):
-    - JKCategories/UIKit/UIApplication (= 1.9.3)
-    - JKCategories/UIKit/UIBarButtonItem (= 1.9.3)
-    - JKCategories/UIKit/UIBezierPath (= 1.9.3)
-    - JKCategories/UIKit/UIButton (= 1.9.3)
-    - JKCategories/UIKit/UIColor (= 1.9.3)
-    - JKCategories/UIKit/UIControl (= 1.9.3)
-    - JKCategories/UIKit/UIDevice (= 1.9.3)
-    - JKCategories/UIKit/UIFont (= 1.9.3)
-    - JKCategories/UIKit/UIImage (= 1.9.3)
-    - JKCategories/UIKit/UIImageView (= 1.9.3)
-    - JKCategories/UIKit/UILable (= 1.9.3)
-    - JKCategories/UIKit/UINavigationBar (= 1.9.3)
-    - JKCategories/UIKit/UINavigationController (= 1.9.3)
-    - JKCategories/UIKit/UINavigationItem (= 1.9.3)
-    - JKCategories/UIKit/UIPopoverController (= 1.9.3)
-    - JKCategories/UIKit/UIResponder (= 1.9.3)
-    - JKCategories/UIKit/UIScreen (= 1.9.3)
-    - JKCategories/UIKit/UIScrollView (= 1.9.3)
-    - JKCategories/UIKit/UISearchBar (= 1.9.3)
-    - JKCategories/UIKit/UISplitViewController (= 1.9.3)
-    - JKCategories/UIKit/UITableView (= 1.9.3)
-    - JKCategories/UIKit/UITableViewCell (= 1.9.3)
-    - JKCategories/UIKit/UITextField (= 1.9.3)
-    - JKCategories/UIKit/UITextView (= 1.9.3)
-    - JKCategories/UIKit/UIView (= 1.9.3)
-    - JKCategories/UIKit/UIViewController (= 1.9.3)
-    - JKCategories/UIKit/UIWindow (= 1.9.3)
-  - JKCategories/UIKit/UIApplication (1.9.3)
-  - JKCategories/UIKit/UIBarButtonItem (1.9.3)
-  - JKCategories/UIKit/UIBezierPath (1.9.3)
-  - JKCategories/UIKit/UIButton (1.9.3)
-  - JKCategories/UIKit/UIColor (1.9.3)
-  - JKCategories/UIKit/UIControl (1.9.3)
-  - JKCategories/UIKit/UIDevice (1.9.3)
-  - JKCategories/UIKit/UIFont (1.9.3)
-  - JKCategories/UIKit/UIImage (1.9.3)
-  - JKCategories/UIKit/UIImageView (1.9.3)
-  - JKCategories/UIKit/UILable (1.9.3)
-  - JKCategories/UIKit/UINavigationBar (1.9.3)
-  - JKCategories/UIKit/UINavigationController (1.9.3)
-  - JKCategories/UIKit/UINavigationItem (1.9.3)
-  - JKCategories/UIKit/UIPopoverController (1.9.3)
-  - JKCategories/UIKit/UIResponder (1.9.3)
-  - JKCategories/UIKit/UIScreen (1.9.3)
-  - JKCategories/UIKit/UIScrollView (1.9.3)
-  - JKCategories/UIKit/UISearchBar (1.9.3)
-  - JKCategories/UIKit/UISplitViewController (1.9.3)
-  - JKCategories/UIKit/UITableView (1.9.3)
-  - JKCategories/UIKit/UITableViewCell (1.9.3)
-  - JKCategories/UIKit/UITextField (1.9.3)
-  - JKCategories/UIKit/UITextView (1.9.3)
-  - JKCategories/UIKit/UIView (1.9.3)
-  - JKCategories/UIKit/UIViewController (1.9.3)
-  - JKCategories/UIKit/UIWindow (1.9.3)
   - SVProgressHUD (2.2.5)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
-  - JKCategories
+  - JKCategories/Foundation
   - SVProgressHUD
   - YYCache
   - YYModel
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - JKCategories
   trunk:
     - AFNetworking
-    - JKCategories
     - SVProgressHUD
     - YYCache
     - YYModel
@@ -178,6 +91,6 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9db89e4d8376736b008283ccc78a8e7fdd2887fe
+PODFILE CHECKSUM: a743639a3bd2f421f9b407bcfc3b8ec4785cd66a
 
 COCOAPODS: 1.12.0
