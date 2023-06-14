@@ -80,15 +80,6 @@
             [requestParams setValue:[[JSNetworkingConfigurations sharedInstance].httpHeaders objectForKey:key] forKey:key];
         }
     }
-    
-    //系统时间串10位
-    //测试
-    [requestParams setValue:[[XZTimeTool shareTimeTool] getNowTime] forKey:@"installTime"];
-    NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-    NSString *tzName = [timeZone name];
-    [_httpRequestSerializer setValue:tzName forHTTPHeaderField:@"timezone"];
-//    [requestParams setValue:tzName forKey:@"timezone"];
-    
     NSMutableURLRequest *request = [self.httpRequestSerializer requestWithMethod:method URLString:url parameters:requestParams error:NULL];
     request.requestParams = requestParams;
     return request;
@@ -125,20 +116,6 @@
                 [_httpRequestSerializer setValue:[[JSNetworkingConfigurations sharedInstance].httpHeaders objectForKey:key] forHTTPHeaderField:key];
             }
         }
-        NSString *authToken = [[NSString alloc]initWithFormat:@"Bearer %@",[[JSNetworkingConfigurations sharedInstance].delegate getCurrentUserToken]];
-        [_httpJsonRequestSerializer setValue:@"1" forHTTPHeaderField:@"token"];
-        
-        //系统时间串10位
-        [_httpRequestSerializer setValue:[[XZTimeTool shareTimeTool] getNowTime] forHTTPHeaderField:@"installTime"];
-        //随机数生成
-//        NSString *strRandom = @"";
-//        for(int i=0; i<8; i++)
-//        {
-//            strRandom = [strRandom stringByAppendingFormat:@"%i",(arc4random() % 9)];
-//        }
-        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-        NSString *tzName = [timeZone name];
-        [_httpRequestSerializer setValue:tzName forHTTPHeaderField:@"timezone"];
         _httpRequestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     }
     
@@ -154,18 +131,6 @@
                 [_httpJsonRequestSerializer setValue:[[JSNetworkingConfigurations sharedInstance].httpHeaders objectForKey:key] forHTTPHeaderField:key];
             }
         }
-        NSString *authToken = [[NSString alloc]initWithFormat:@"Bearer %@",[[JSNetworkingConfigurations sharedInstance].delegate getCurrentUserToken]];
-//        [_httpJsonRequestSerializer setValue:authToken forHTTPHeaderField:@"token"];
-        
-        //系统时间串10位
-        [_httpJsonRequestSerializer setValue:[[XZTimeTool shareTimeTool] getNowTime] forHTTPHeaderField:@"installTime"];
-        //随机数生成
-        NSString *strRandom = @"";
-        for(int i=0; i<8; i++)
-        {
-            strRandom = [strRandom stringByAppendingFormat:@"%i",(arc4random() % 9)];
-        }
-        [_httpJsonRequestSerializer setValue:strRandom forHTTPHeaderField:@"timezone"];
         _httpJsonRequestSerializer.cachePolicy = NSURLRequestUseProtocolCachePolicy;
     }
     return _httpJsonRequestSerializer;
